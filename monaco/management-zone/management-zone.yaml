@@ -1,4 +1,0 @@
-config:
-- awsgamedaytask2: awsgamedaytask2.json
-awsgamedaytask2:
-- name: ${ DTgrouptag }
