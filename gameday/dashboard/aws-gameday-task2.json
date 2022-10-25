@@ -1,15 +1,21 @@
+
 {
- "dashboardMetadata": {
-  "dashboardFilter": {
-   "managementZone": {
-    "id": "{{ .mgzid }}",
-    "name": "awsgamedaytask2"
-   },
-   "timeframe": "-15m"
-  },
-  "hasConsistentColors": true,
-  "name": "aws-gameday-task2"
- },
+    "dashboardMetadata": {
+      "name": "{{ .name }}",
+      "shared": true,
+      "owner": "",
+      "sharingDetails": {
+        "linkShared": true,
+        "published": true
+      },
+      "dashboardFilter": {
+        "timeframe": "-30m",
+        "managementZone": {
+          "id": "{{ .managementZoneId }}",
+          "name": "{{ .managementZoneName }}"
+        }
+      }
+    },
  "tiles": [
   {
    "bounds": {
