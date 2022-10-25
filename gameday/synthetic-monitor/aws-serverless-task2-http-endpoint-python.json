@@ -33,6 +33,166 @@
   {
     "name": "aws-serverless-task2-http-endpoint-python",
    "sequenceNumber": 1
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 2
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 3
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 4
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 5
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 6
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 7
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 8
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 9
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 10
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 11
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 12
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 13
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 14
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 15
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 16
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 17
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 18
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 19
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 20
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 21
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 22
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 23
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 24
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 25
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 26
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 27
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 28
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 29
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 30
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 31
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 32
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 33
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 34
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 35
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 36
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 37
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 38
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 39
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 40
+  },
+  {
+    "name": "aws-serverless-task2-http-endpoint-python",
+   "sequenceNumber": 41
   }
  ],
  "script": {
@@ -55,7 +215,767 @@
       }
      ]
     }
-   }
+   },
+   {
+     "configuration": {
+      "acceptAnyCertificate": true,
+      "followRedirects": true,
+      "shouldNotPersistSensitiveData": false
+     },
+     "description": "aws-serverless-task2-http-endpoint-python",
+     "method": "GET",
+     "url": "{{.link}}",
+     "validation": {
+      "rules": [
+       {
+        "passIfFound": false,
+        "type": "httpStatusesList",
+        "value": "\u003e=400"
+       }
+      ]
+     }
+    },  
+    {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-python",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+     "configuration": {
+      "acceptAnyCertificate": true,
+      "followRedirects": true,
+      "shouldNotPersistSensitiveData": false
+     },
+     "description": "aws-serverless-task2-http-endpoint-python",
+     "method": "GET",
+     "url": "{{.link}}",
+     "validation": {
+      "rules": [
+       {
+        "passIfFound": false,
+        "type": "httpStatusesList",
+        "value": "\u003e=400"
+       }
+      ]
+     }
+    }, 
+    {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-python",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+     "configuration": {
+      "acceptAnyCertificate": true,
+      "followRedirects": true,
+      "shouldNotPersistSensitiveData": false
+     },
+     "description": "aws-serverless-task2-http-endpoint-python",
+     "method": "GET",
+     "url": "{{.link}}",
+     "validation": {
+      "rules": [
+       {
+        "passIfFound": false,
+        "type": "httpStatusesList",
+        "value": "\u003e=400"
+       }
+      ]
+     }
+    }, 
+    {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-python",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+     "configuration": {
+      "acceptAnyCertificate": true,
+      "followRedirects": true,
+      "shouldNotPersistSensitiveData": false
+     },
+     "description": "aws-serverless-task2-http-endpoint-python",
+     "method": "GET",
+     "url": "{{.link}}",
+     "validation": {
+      "rules": [
+       {
+        "passIfFound": false,
+        "type": "httpStatusesList",
+        "value": "\u003e=400"
+       }
+      ]
+     }
+    }, 
+    {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-python",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+     "configuration": {
+      "acceptAnyCertificate": true,
+      "followRedirects": true,
+      "shouldNotPersistSensitiveData": false
+     },
+     "description": "aws-serverless-task2-http-endpoint-python",
+     "method": "GET",
+     "url": "{{.link}}",
+     "validation": {
+      "rules": [
+       {
+        "passIfFound": false,
+        "type": "httpStatusesList",
+        "value": "\u003e=400"
+       }
+      ]
+     }
+    },   
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-python",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+     "configuration": {
+      "acceptAnyCertificate": true,
+      "followRedirects": true,
+      "shouldNotPersistSensitiveData": false
+     },
+     "description": "aws-serverless-task2-http-endpoint-python",
+     "method": "GET",
+     "url": "{{.link}}",
+     "validation": {
+      "rules": [
+       {
+        "passIfFound": false,
+        "type": "httpStatusesList",
+        "value": "\u003e=400"
+       }
+      ]
+     }
+    }, 
+    {
+        "configuration": {
+         "acceptAnyCertificate": true,
+         "followRedirects": true,
+         "shouldNotPersistSensitiveData": false
+        },
+        "description": "aws-serverless-task2-http-endpoint-python",
+        "method": "GET",
+        "url": "{{.link}}",
+        "validation": {
+         "rules": [
+          {
+           "passIfFound": false,
+           "type": "httpStatusesList",
+           "value": "\u003e=400"
+          }
+         ]
+        }
+       },
+       {
+         "configuration": {
+          "acceptAnyCertificate": true,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+         },
+         "description": "aws-serverless-task2-http-endpoint-python",
+         "method": "GET",
+         "url": "{{.link}}",
+         "validation": {
+          "rules": [
+           {
+            "passIfFound": false,
+            "type": "httpStatusesList",
+            "value": "\u003e=400"
+           }
+          ]
+         }
+        },  
+        {
+        "configuration": {
+         "acceptAnyCertificate": true,
+         "followRedirects": true,
+         "shouldNotPersistSensitiveData": false
+        },
+        "description": "aws-serverless-task2-http-endpoint-python",
+        "method": "GET",
+        "url": "{{.link}}",
+        "validation": {
+         "rules": [
+          {
+           "passIfFound": false,
+           "type": "httpStatusesList",
+           "value": "\u003e=400"
+          }
+         ]
+        }
+       },
+       {
+         "configuration": {
+          "acceptAnyCertificate": true,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+         },
+         "description": "aws-serverless-task2-http-endpoint-python",
+         "method": "GET",
+         "url": "{{.link}}",
+         "validation": {
+          "rules": [
+           {
+            "passIfFound": false,
+            "type": "httpStatusesList",
+            "value": "\u003e=400"
+           }
+          ]
+         }
+        }, 
+        {
+        "configuration": {
+         "acceptAnyCertificate": true,
+         "followRedirects": true,
+         "shouldNotPersistSensitiveData": false
+        },
+        "description": "aws-serverless-task2-http-endpoint-python",
+        "method": "GET",
+        "url": "{{.link}}",
+        "validation": {
+         "rules": [
+          {
+           "passIfFound": false,
+           "type": "httpStatusesList",
+           "value": "\u003e=400"
+          }
+         ]
+        }
+       },
+       {
+         "configuration": {
+          "acceptAnyCertificate": true,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+         },
+         "description": "aws-serverless-task2-http-endpoint-python",
+         "method": "GET",
+         "url": "{{.link}}",
+         "validation": {
+          "rules": [
+           {
+            "passIfFound": false,
+            "type": "httpStatusesList",
+            "value": "\u003e=400"
+           }
+          ]
+         }
+        }, 
+        {
+        "configuration": {
+         "acceptAnyCertificate": true,
+         "followRedirects": true,
+         "shouldNotPersistSensitiveData": false
+        },
+        "description": "aws-serverless-task2-http-endpoint-python",
+        "method": "GET",
+        "url": "{{.link}}",
+        "validation": {
+         "rules": [
+          {
+           "passIfFound": false,
+           "type": "httpStatusesList",
+           "value": "\u003e=400"
+          }
+         ]
+        }
+       },
+       {
+         "configuration": {
+          "acceptAnyCertificate": true,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+         },
+         "description": "aws-serverless-task2-http-endpoint-python",
+         "method": "GET",
+         "url": "{{.link}}",
+         "validation": {
+          "rules": [
+           {
+            "passIfFound": false,
+            "type": "httpStatusesList",
+            "value": "\u003e=400"
+           }
+          ]
+         }
+        }, 
+        {
+        "configuration": {
+         "acceptAnyCertificate": true,
+         "followRedirects": true,
+         "shouldNotPersistSensitiveData": false
+        },
+        "description": "aws-serverless-task2-http-endpoint-python",
+        "method": "GET",
+        "url": "{{.link}}",
+        "validation": {
+         "rules": [
+          {
+           "passIfFound": false,
+           "type": "httpStatusesList",
+           "value": "\u003e=400"
+          }
+         ]
+        }
+       },
+       {
+         "configuration": {
+          "acceptAnyCertificate": true,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+         },
+         "description": "aws-serverless-task2-http-endpoint-python",
+         "method": "GET",
+         "url": "{{.link}}",
+         "validation": {
+          "rules": [
+           {
+            "passIfFound": false,
+            "type": "httpStatusesList",
+            "value": "\u003e=400"
+           }
+          ]
+         }
+        },   
+       {
+        "configuration": {
+         "acceptAnyCertificate": true,
+         "followRedirects": true,
+         "shouldNotPersistSensitiveData": false
+        },
+        "description": "aws-serverless-task2-http-endpoint-python",
+        "method": "GET",
+        "url": "{{.link}}",
+        "validation": {
+         "rules": [
+          {
+           "passIfFound": false,
+           "type": "httpStatusesList",
+           "value": "\u003e=400"
+          }
+         ]
+        }
+       },
+       {
+         "configuration": {
+          "acceptAnyCertificate": true,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+         },
+         "description": "aws-serverless-task2-http-endpoint-python",
+         "method": "GET",
+         "url": "{{.link}}",
+         "validation": {
+          "rules": [
+           {
+            "passIfFound": false,
+            "type": "httpStatusesList",
+            "value": "\u003e=400"
+           }
+          ]
+         }
+        }, 
+        {
+            "configuration": {
+             "acceptAnyCertificate": true,
+             "followRedirects": true,
+             "shouldNotPersistSensitiveData": false
+            },
+            "description": "aws-serverless-task2-http-endpoint-python",
+            "method": "GET",
+            "url": "{{.link}}",
+            "validation": {
+             "rules": [
+              {
+               "passIfFound": false,
+               "type": "httpStatusesList",
+               "value": "\u003e=400"
+              }
+             ]
+            }
+           },
+           {
+             "configuration": {
+              "acceptAnyCertificate": true,
+              "followRedirects": true,
+              "shouldNotPersistSensitiveData": false
+             },
+             "description": "aws-serverless-task2-http-endpoint-python",
+             "method": "GET",
+             "url": "{{.link}}",
+             "validation": {
+              "rules": [
+               {
+                "passIfFound": false,
+                "type": "httpStatusesList",
+                "value": "\u003e=400"
+               }
+              ]
+             }
+            },  
+            {
+            "configuration": {
+             "acceptAnyCertificate": true,
+             "followRedirects": true,
+             "shouldNotPersistSensitiveData": false
+            },
+            "description": "aws-serverless-task2-http-endpoint-python",
+            "method": "GET",
+            "url": "{{.link}}",
+            "validation": {
+             "rules": [
+              {
+               "passIfFound": false,
+               "type": "httpStatusesList",
+               "value": "\u003e=400"
+              }
+             ]
+            }
+           },
+           {
+             "configuration": {
+              "acceptAnyCertificate": true,
+              "followRedirects": true,
+              "shouldNotPersistSensitiveData": false
+             },
+             "description": "aws-serverless-task2-http-endpoint-python",
+             "method": "GET",
+             "url": "{{.link}}",
+             "validation": {
+              "rules": [
+               {
+                "passIfFound": false,
+                "type": "httpStatusesList",
+                "value": "\u003e=400"
+               }
+              ]
+             }
+            }, 
+            {
+            "configuration": {
+             "acceptAnyCertificate": true,
+             "followRedirects": true,
+             "shouldNotPersistSensitiveData": false
+            },
+            "description": "aws-serverless-task2-http-endpoint-python",
+            "method": "GET",
+            "url": "{{.link}}",
+            "validation": {
+             "rules": [
+              {
+               "passIfFound": false,
+               "type": "httpStatusesList",
+               "value": "\u003e=400"
+              }
+             ]
+            }
+           },
+           {
+             "configuration": {
+              "acceptAnyCertificate": true,
+              "followRedirects": true,
+              "shouldNotPersistSensitiveData": false
+             },
+             "description": "aws-serverless-task2-http-endpoint-python",
+             "method": "GET",
+             "url": "{{.link}}",
+             "validation": {
+              "rules": [
+               {
+                "passIfFound": false,
+                "type": "httpStatusesList",
+                "value": "\u003e=400"
+               }
+              ]
+             }
+            }, 
+            {
+            "configuration": {
+             "acceptAnyCertificate": true,
+             "followRedirects": true,
+             "shouldNotPersistSensitiveData": false
+            },
+            "description": "aws-serverless-task2-http-endpoint-python",
+            "method": "GET",
+            "url": "{{.link}}",
+            "validation": {
+             "rules": [
+              {
+               "passIfFound": false,
+               "type": "httpStatusesList",
+               "value": "\u003e=400"
+              }
+             ]
+            }
+           },
+           {
+             "configuration": {
+              "acceptAnyCertificate": true,
+              "followRedirects": true,
+              "shouldNotPersistSensitiveData": false
+             },
+             "description": "aws-serverless-task2-http-endpoint-python",
+             "method": "GET",
+             "url": "{{.link}}",
+             "validation": {
+              "rules": [
+               {
+                "passIfFound": false,
+                "type": "httpStatusesList",
+                "value": "\u003e=400"
+               }
+              ]
+             }
+            }, 
+            {
+            "configuration": {
+             "acceptAnyCertificate": true,
+             "followRedirects": true,
+             "shouldNotPersistSensitiveData": false
+            },
+            "description": "aws-serverless-task2-http-endpoint-python",
+            "method": "GET",
+            "url": "{{.link}}",
+            "validation": {
+             "rules": [
+              {
+               "passIfFound": false,
+               "type": "httpStatusesList",
+               "value": "\u003e=400"
+              }
+             ]
+            }
+           },
+           {
+             "configuration": {
+              "acceptAnyCertificate": true,
+              "followRedirects": true,
+              "shouldNotPersistSensitiveData": false
+             },
+             "description": "aws-serverless-task2-http-endpoint-python",
+             "method": "GET",
+             "url": "{{.link}}",
+             "validation": {
+              "rules": [
+               {
+                "passIfFound": false,
+                "type": "httpStatusesList",
+                "value": "\u003e=400"
+               }
+              ]
+             }
+            },   
+           {
+            "configuration": {
+             "acceptAnyCertificate": true,
+             "followRedirects": true,
+             "shouldNotPersistSensitiveData": false
+            },
+            "description": "aws-serverless-task2-http-endpoint-python",
+            "method": "GET",
+            "url": "{{.link}}",
+            "validation": {
+             "rules": [
+              {
+               "passIfFound": false,
+               "type": "httpStatusesList",
+               "value": "\u003e=400"
+              }
+             ]
+            }
+           },
+           {
+             "configuration": {
+              "acceptAnyCertificate": true,
+              "followRedirects": true,
+              "shouldNotPersistSensitiveData": false
+             },
+             "description": "aws-serverless-task2-http-endpoint-python",
+             "method": "GET",
+             "url": "{{.link}}",
+             "validation": {
+              "rules": [
+               {
+                "passIfFound": false,
+                "type": "httpStatusesList",
+                "value": "\u003e=400"
+               }
+              ]
+             }
+            }, 
+            {
+                "configuration": {
+                 "acceptAnyCertificate": true,
+                 "followRedirects": true,
+                 "shouldNotPersistSensitiveData": false
+                },
+                "description": "aws-serverless-task2-http-endpoint-python",
+                "method": "GET",
+                "url": "{{.link}}",
+                "validation": {
+                 "rules": [
+                  {
+                   "passIfFound": false,
+                   "type": "httpStatusesList",
+                   "value": "\u003e=400"
+                  }
+                 ]
+                }
+               },
+               {
+                 "configuration": {
+                  "acceptAnyCertificate": true,
+                  "followRedirects": true,
+                  "shouldNotPersistSensitiveData": false
+                 },
+                 "description": "aws-serverless-task2-http-endpoint-python",
+                 "method": "GET",
+                 "url": "{{.link}}",
+                 "validation": {
+                  "rules": [
+                   {
+                    "passIfFound": false,
+                    "type": "httpStatusesList",
+                    "value": "\u003e=400"
+                   }
+                  ]
+                 }
+                },  
+                {
+                "configuration": {
+                 "acceptAnyCertificate": true,
+                 "followRedirects": true,
+                 "shouldNotPersistSensitiveData": false
+                },
+                "description": "aws-serverless-task2-http-endpoint-python",
+                "method": "GET",
+                "url": "{{.link}}",
+                "validation": {
+                 "rules": [
+                  {
+                   "passIfFound": false,
+                   "type": "httpStatusesList",
+                   "value": "\u003e=400"
+                  }
+                 ]
+                }
+               },
+               {
+                 "configuration": {
+                  "acceptAnyCertificate": true,
+                  "followRedirects": true,
+                  "shouldNotPersistSensitiveData": false
+                 },
+                 "description": "aws-serverless-task2-http-endpoint-python",
+                 "method": "GET",
+                 "url": "{{.link}}",
+                 "validation": {
+                  "rules": [
+                   {
+                    "passIfFound": false,
+                    "type": "httpStatusesList",
+                    "value": "\u003e=400"
+                   }
+                  ]
+                 }
+                }, 
+                {
+                "configuration": {
+                 "acceptAnyCertificate": true,
+                 "followRedirects": true,
+                 "shouldNotPersistSensitiveData": false
+                },
+                "description": "aws-serverless-task2-http-endpoint-python",
+                "method": "GET",
+                "url": "{{.link}}",
+                "validation": {
+                 "rules": [
+                  {
+                   "passIfFound": false,
+                   "type": "httpStatusesList",
+                   "value": "\u003e=400"
+                  }
+                 ]
+                }
+               }
   ],
   "version": "1.0"
  },
