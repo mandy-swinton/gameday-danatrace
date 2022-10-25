@@ -1,0 +1,14 @@
+config:
+- aws-gameday-task2: aws-gameday-task2.json
+Demo:
+aws-gameday-task2:
+- name: aws-gameday-task2
+- mgzid: b4c2ed79-3662-4a80-8650-b9d878041b3f
+- grouptag: gamedaygroup2
+- synthetic_nodejs: https://ozw11698.live.dynatrace.com/ui/http-monitor/HTTP_CHECK-091C548FAC3C1DB2/ondemand?gtf=-2h&gf=all
+- synthetic_python: https://ozw11698.live.dynatrace.com/ui/http-monitor/HTTP_CHECK-6CBEE1978670291E/ondemand?gtf=-2h&gf=all
+
+
+
+
+
