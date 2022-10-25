@@ -1,6 +1,5 @@
 config:
 - aws-gameday-task2: aws-gameday-task2.json
-Demo:
 aws-gameday-task2:
 - name: aws-gameday-task2
 - mgzid: b4c2ed79-3662-4a80-8650-b9d878041b3f
