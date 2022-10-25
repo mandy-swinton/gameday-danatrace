@@ -32,7 +32,83 @@
   {
    "name": "aws-serverless-task2-http-endpoint-nodejs",
    "sequenceNumber": 1
-  }
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 2
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 3
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 4
+  },
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 5
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 6
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 7
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 8
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 9
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 10
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 11
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 12
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 13
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 14
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 15
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 16
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 17
+  }, 
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 18
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 19
+  },  
+  {
+   "name": "aws-serverless-task2-http-endpoint-nodejs",
+   "sequenceNumber": 20
+  } 
  ],
  "script": {
   "requests": [
@@ -54,7 +130,368 @@
       }
      ]
     }
-   }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   },
+   {
+    "configuration": {
+     "acceptAnyCertificate": true,
+     "followRedirects": true,
+     "shouldNotPersistSensitiveData": false
+    },
+    "description": "aws-serverless-task2-http-endpoint-nodejs",
+    "method": "GET",
+    "url": "{{.link}}",
+    "validation": {
+     "rules": [
+      {
+       "passIfFound": false,
+       "type": "httpStatusesList",
+       "value": "\u003e=400"
+      }
+     ]
+    }
+   }   
   ],
   "version": "1.0"
  },
