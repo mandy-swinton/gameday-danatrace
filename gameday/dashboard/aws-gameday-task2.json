@@ -305,7 +305,7 @@
   },
   {
    "assignedEntities": [
-    "SERVICE-4228A7ECF4D3E9C1"
+    "{{ .pythonservicedid }}"
    ],
    "bounds": {
     "height": 266,
@@ -324,7 +324,7 @@
   },
   {
    "assignedEntities": [
-    "SERVICE-8F187125366C5DBA"
+    "{{ .nodejsservicedid }}"
    ],
    "bounds": {
     "height": 266,
