@@ -1,2005 +1,1819 @@
-
 {
-    "dashboardMetadata": {
-      "name": "{{ .name }}",
-      "shared": true,
-      "owner": "",
-      "sharingDetails": {
-        "linkShared": true,
-        "published": true
+  "dashboardMetadata": {
+    "name": "{{ .name }}",
+    "shared": true,
+    "owner": "",
+    "dashboardFilter": {
+      "timeframe": "-15m",
+      "managementZone": {
+        "id": "{{ .managementZoneId }}",
+        "name": "{{ .managementZoneName }}"
+      }
+    },
+    "popularity": 10,
+    "hasConsistentColors": true
+  },
+  "tiles": [
+    {
+      "name": "Execution Time",
+      "nameSize": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 456,
+        "width": 456,
+        "height": 228
       },
-      "dashboardFilter": {
-        "timeframe": "-30m",
-        "managementZone": {
-          "id": "{{ .managementZoneId }}",
-          "name": "{{ .managementZoneName }}"
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:cloud.aws.lambda.duration",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.aws_lambda_function"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
         }
-      }
-    },
- "tiles": [
-  {
-   "bounds": {
-    "height": 228,
-    "left": 456,
-    "top": 228,
-    "width": 456
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:cloud.aws.lambda.duration:splitBy(\"dt.entity.aws_lambda_function\"):sort(value(auto,descending)):limit(100)):limit(100):names"
-   ],
-   "name": "Execution Time",
-   "nameSize": "",
-   "queries": [
-    {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": null,
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:cloud.aws.lambda.duration",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.aws_lambda_function"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
-      },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
       ],
-      "unitTransform": "Second",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": null,
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#7dc540",
-        "value": 0
-       },
-       {
-        "color": "#f5d30f",
-        "value": 4
-       },
-       {
-        "color": "#dc172a",
-        "value": 6
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "PIE_CHART"
-   }
-  },
-  {
-   "bounds": {
-    "height": 228,
-    "left": 912,
-    "top": 228,
-    "width": 456
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
-   ],
-   "name": "Failure Rate",
-   "nameSize": null,
-   "queries": [
-    {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": null,
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.errors.total.rate",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
-      },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "auto",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": null,
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#7dc540",
-        "value": null
-       },
-       {
-        "color": "#f5d30f",
-        "value": null
-       },
-       {
-        "color": "#dc172a",
-        "value": null
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "PIE_CHART"
-   }
-  },
-  {
-   "assignedEntities": [
-    "{{ .pythonservicedid }}"
-   ],
-   "bounds": {
-    "height": 266,
-    "left": 1406,
-    "top": 114,
-    "width": 418
-   },
-   "configured": true,
-   "name": "",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "SERVICE_VERSATILE"
-  },
-  {
-   "assignedEntities": [
-    "{{ .nodejsservicedid }}"
-   ],
-   "bounds": {
-    "height": 266,
-    "left": 1406,
-    "top": 380,
-    "width": 418
-   },
-   "configured": true,
-   "name": "",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "SERVICE_VERSATILE"
-  },
-  {
-   "bounds": {
-    "height": 190,
-    "left": 0,
-    "top": 38,
-    "width": 228
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-    "resolution=null\u0026(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
-   ],
-   "name": "Avg. Response Time Nodejs",
-   "nameSize": "small",
-   "queries": [
-    {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": "AND",
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [
-       {
-        "criteria": [
-         {
-          "evaluator": "IN",
-          "matchExactly": true,
-          "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1"
-         }
+      "visualConfig": {
+        "type": "PIE_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "Second",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
         ],
-        "entityAttribute": "entityName",
-        "filter": "dt.entity.service",
-        "filterOperator": "OR",
-        "filterType": "NAME",
-        "globalEntity": null,
-        "nestedFilters": [],
-        "relationship": null
-       }
-      ],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.response.time",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
-      },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "MilliSecond",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": {
-     "linkTileColorToThreshold": true,
-     "showSparkLine": false,
-     "showTrend": true
-    },
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#ab0c17",
-        "value": 2
-       },
-       {
-        "color": "#f5d30f",
-        "value": 1
-       },
-       {
-        "color": "#048855",
-        "value": 0
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "SINGLE_VALUE"
-   }
-  },
-  {
-   "bounds": {
-    "height": 190,
-    "left": 228,
-    "top": 38,
-    "width": 228
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-    "resolution=null\u0026(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
-   ],
-   "name": "Avg. Response Time Python",
-   "nameSize": "small",
-   "queries": [
-    {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": "AND",
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [
-       {
-        "criteria": [
-         {
-          "evaluator": "IN",
-          "matchExactly": true,
-          "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1"
-         }
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "value": 4,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
         ],
-        "entityAttribute": "entityName",
-        "filter": "dt.entity.service",
-        "filterOperator": "OR",
-        "filterType": "NAME",
-        "globalEntity": null,
-        "nestedFilters": [],
-        "relationship": null
-       }
-      ],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.response.time",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "MilliSecond",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": {
-     "linkTileColorToThreshold": true,
-     "showSparkLine": false,
-     "showTrend": true
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:cloud.aws.lambda.duration:splitBy(\"dt.entity.aws_lambda_function\"):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
     },
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#ab0c17",
-        "value": 2
-       },
-       {
-        "color": "#f5d30f",
-        "value": 1
-       },
-       {
-        "color": "#048855",
-        "value": 0
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "SINGLE_VALUE"
-   }
-  },
-  {
-   "bounds": {
-    "height": 190,
-    "left": 456,
-    "top": 38,
-    "width": 228
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-    "resolution=null\u0026(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
-   ],
-   "name": "Avg. Execution Time Nodejs",
-   "nameSize": "small",
-   "queries": [
     {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": "AND",
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [
-       {
-        "criteria": [
-         {
-          "evaluator": "IN",
-          "matchExactly": true,
-          "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}"
-         }
+      "name": "Failure Rate",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 912,
+        "width": 456,
+        "height": 228
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.errors.total.rate",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "PIE_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
         ],
-        "entityAttribute": "entityName",
-        "filter": "dt.entity.aws_lambda_function",
-        "filterOperator": "OR",
-        "filterType": "NAME",
-        "globalEntity": null,
-        "nestedFilters": [],
-        "relationship": null
-       }
-      ],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:cloud.aws.lambda.duration",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.aws_lambda_function"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
-      },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "Second",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": {
-     "linkTileColorToThreshold": true,
-     "showSparkLine": false,
-     "showTrend": true
-    },
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#048855",
-        "value": 0
-       },
-       {
-        "color": "#f5d30f",
-        "value": 4
-       },
-       {
-        "color": "#dc172a",
-        "value": 6
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "SINGLE_VALUE"
-   }
-  },
-  {
-   "bounds": {
-    "height": 190,
-    "left": 684,
-    "top": 38,
-    "width": 228
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-    "resolution=null\u0026(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
-   ],
-   "name": "Avg. Execution Time Nodejs",
-   "nameSize": "small",
-   "queries": [
-    {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": "AND",
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [
-       {
-        "criteria": [
-         {
-          "evaluator": "IN",
-          "matchExactly": true,
-          "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }}"
-         }
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
         ],
-        "entityAttribute": "entityName",
-        "filter": "dt.entity.aws_lambda_function",
-        "filterOperator": "OR",
-        "filterType": "NAME",
-        "globalEntity": null,
-        "nestedFilters": [],
-        "relationship": null
-       }
-      ],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:cloud.aws.lambda.duration",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.aws_lambda_function"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "Second",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": {
-     "linkTileColorToThreshold": true,
-     "showSparkLine": false,
-     "showTrend": true
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
     },
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#048855",
-        "value": 0
-       },
-       {
-        "color": "#f5d30f",
-        "value": 4
-       },
-       {
-        "color": "#dc172a",
-        "value": 6
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "SINGLE_VALUE"
-   }
-  },
-  {
-   "bounds": {
-    "height": 190,
-    "left": 912,
-    "top": 38,
-    "width": 228
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-    "resolution=null\u0026(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
-   ],
-   "name": "Avg. Failure Rate Node.js",
-   "nameSize": "small",
-   "queries": [
     {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": "AND",
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [
-       {
-        "criteria": [
-         {
-          "evaluator": "IN",
-          "matchExactly": true,
-          "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1"
-         }
+      "name": "Avg. Response Time Nodejs",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 228,
+        "height": 190
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.response.time",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "MilliSecond",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
         ],
-        "entityAttribute": "entityName",
-        "filter": "dt.entity.service",
-        "filterOperator": "OR",
-        "filterType": "NAME",
-        "globalEntity": null,
-        "nestedFilters": [],
-        "relationship": null
-       }
-      ],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.errors.total.rate",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
-      },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "auto",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": {
-     "linkTileColorToThreshold": true,
-     "showSparkLine": false,
-     "showTrend": true
-    },
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#7dc540",
-        "value": 0
-       },
-       {
-        "color": "#f5d30f",
-        "value": null
-       },
-       {
-        "color": "#dc172a",
-        "value": 1
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "SINGLE_VALUE"
-   }
-  },
-  {
-   "bounds": {
-    "height": 190,
-    "left": 1140,
-    "top": 38,
-    "width": 228
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-    "resolution=null\u0026(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
-   ],
-   "name": "Avg. Failure Rate Python",
-   "nameSize": "small",
-   "queries": [
-    {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": "AND",
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [
-       {
-        "criteria": [
-         {
-          "evaluator": "IN",
-          "matchExactly": true,
-          "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1"
-         }
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 2,
+                "color": "#ab0c17"
+              },
+              {
+                "value": 1,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#048855"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
         ],
-        "entityAttribute": "entityName",
-        "filter": "dt.entity.service",
-        "filterOperator": "OR",
-        "filterType": "NAME",
-        "globalEntity": null,
-        "nestedFilters": [],
-        "relationship": null
-       }
-      ],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.errors.total.rate",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "LINE"
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
-      ],
-      "unitTransform": "auto",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": {
-     "linkTileColorToThreshold": true,
-     "showSparkLine": false,
-     "showTrend": true
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+      ]
     },
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
-    },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#048855",
-        "value": 0
-       },
-       {
-        "color": "#f5d30f",
-        "value": null
-       },
-       {
-        "color": "#dc172a",
-        "value": 1
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "SINGLE_VALUE"
-   }
-  },
-  {
-   "bounds": {
-    "height": 38,
-    "left": 152,
-    "top": 0,
-    "width": 228
-   },
-   "configured": true,
-   "name": "Response Time",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "HEADER"
-  },
-  {
-   "bounds": {
-    "height": 38,
-    "left": 608,
-    "top": 0,
-    "width": 228
-   },
-   "configured": true,
-   "name": "Execution Time",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "HEADER"
-  },
-  {
-   "bounds": {
-    "height": 38,
-    "left": 1064,
-    "top": 0,
-    "width": 228
-   },
-   "configured": true,
-   "name": "Failure Rate",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "HEADER"
-  },
-  {
-   "bounds": {
-    "height": 38,
-    "left": 1520,
-    "top": 0,
-    "width": 228
-   },
-   "configured": true,
-   "name": "Synthetic tests",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "HEADER"
-  },
-  {
-   "bounds": {
-    "height": 38,
-    "left": 1482,
-    "top": 76,
-    "width": 266
-   },
-   "configured": true,
-   "markdown": " [❇️ Nodejs Synthetic test On Demand](https://{{ .dt_tenant }}.live.dynatrace.com/ui/http-monitor/{{ .synthetic_nodejs }}/ondemand?gtf=-2h&gf=all;)\n\n",
-   "name": "Markdown",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "MARKDOWN"
-  },
-  {
-   "bounds": {
-    "height": 38,
-    "left": 1482,
-    "top": 38,
-    "width": 266
-   },
-   "configured": true,
-   "markdown": "[❇️ Python Synthetic test On Demand](https://{{ .dt_tenant }}.live.dynatrace.com/ui/http-monitor/{{ .synthetic_python }}/ondemand?gtf=-2h&gf=all;)\n",
-   "name": "Markdown",
-   "nameSize": null,
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "MARKDOWN"
-  },
-  {
-   "bounds": {
-    "height": 228,
-    "left": 0,
-    "top": 228,
-    "width": 456
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=Inf\u0026(builtin:service.response.time:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(10)):limit(100):names"
-   ],
-   "name": "Response Time",
-   "nameSize": "medium",
-   "queries": [
     {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": null,
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": null,
-     "metric": "builtin:service.response.time",
-     "metricSelector": null,
-     "sortBy": null,
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "STACKED_AREA"
+      "name": "Avg. Response Time Python",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 228,
+        "width": 228,
+        "height": 190
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.response.time",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
       ],
-      "unitTransform": "MilliSecond",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": null,
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": null
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "MilliSecond",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 2,
+                "color": "#ab0c17"
+              },
+              {
+                "value": 1,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#048855"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+      ]
     },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": "Response time",
-      "queryId": "B",
-      "rules": [
-       {
-        "color": "#ab0c17",
-        "value": 2
-       },
-       {
-        "color": "#f5d30f",
-        "value": 1
-       },
-       {
-        "color": "#048855",
-        "value": 0
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "PIE_CHART"
-   }
-  },
-  {
-   "bounds": {
-    "height": 304,
-    "left": 0,
-    "top": 456,
-    "width": 456
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=5m\u0026(builtin:service.response.time:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
-   ],
-   "name": "Response Time",
-   "nameSize": "medium",
-   "queries": [
     {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": null,
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.response.time",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "AREA"
+      "name": "Avg. Execution Time Nodejs",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 456,
+        "width": 228,
+        "height": 190
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:cloud.aws.lambda.duration",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.aws_lambda_function"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.aws_lambda_function",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
       ],
-      "unitTransform": "auto",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": null,
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "Second",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#048855"
+              },
+              {
+                "value": 4,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+      ]
     },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#7dc540",
-        "value": null
-       },
-       {
-        "color": "#f5d30f",
-        "value": null
-       },
-       {
-        "color": "#dc172a",
-        "value": null
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "GRAPH_CHART"
-   }
-  },
-  {
-   "bounds": {
-    "height": 304,
-    "left": 456,
-    "top": 456,
-    "width": 456
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=5m\u0026(builtin:cloud.aws.lambda.duration:splitBy(\"dt.entity.aws_lambda_function\"):sort(value(auto,descending)):limit(100)):limit(100):names"
-   ],
-   "name": "Execution Time",
-   "nameSize": "",
-   "queries": [
     {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": null,
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:cloud.aws.lambda.duration",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.aws_lambda_function"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "STACKED_AREA"
+      "name": "Avg. Execution Time Nodejs",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 684,
+        "width": 228,
+        "height": 190
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:cloud.aws.lambda.duration",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.aws_lambda_function"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.aws_lambda_function",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }}",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
       ],
-      "unitTransform": "auto",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": null,
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "Second",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#048855"
+              },
+              {
+                "value": 4,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+      ]
     },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#7dc540",
-        "value": null
-       },
-       {
-        "color": "#f5d30f",
-        "value": null
-       },
-       {
-        "color": "#dc172a",
-        "value": null
-       }
-      ],
-      "visible": true
-     }
-    ],
-    "type": "STACKED_AREA"
-   }
-  },
-  {
-   "bounds": {
-    "height": 304,
-    "left": 912,
-    "top": 456,
-    "width": 456
-   },
-   "configured": true,
-   "customName": "Top list",
-   "metricExpressions": [
-    "resolution=5m\u0026(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
-   ],
-   "name": "Failure Rate",
-   "nameSize": null,
-   "queries": [
     {
-     "enabled": true,
-     "filterBy": {
-      "criteria": [],
-      "entityAttribute": null,
-      "filter": null,
-      "filterOperator": null,
-      "filterType": null,
-      "globalEntity": null,
-      "nestedFilters": [],
-      "relationship": null
-     },
-     "foldTransformation": null,
-     "generatedMetricSelector": null,
-     "id": "B",
-     "limit": 100,
-     "metric": "builtin:service.errors.total.rate",
-     "metricSelector": null,
-     "sortBy": "DESC",
-     "spaceAggregation": null,
-     "splitBy": [
-      "dt.entity.service"
-     ],
-     "timeAggregation": "DEFAULT"
-    }
-   ],
-   "queriesSettings": {
-    "foldAggregation": null,
-    "foldTransformation": null,
-    "resolution": "5m"
-   },
-   "tileFilter": {
-    "managementZone": null,
-    "timeframe": null
-   },
-   "tileType": "DATA_EXPLORER",
-   "visualConfig": {
-    "axes": {
-     "xAxis": {
-      "displayName": "",
-      "visible": true
-     },
-     "yAxes": [
-      {
-       "defaultAxis": true,
-       "displayName": "",
-       "max": "AUTO",
-       "min": "AUTO",
-       "position": "LEFT",
-       "queryIds": [
-        "B"
-       ],
-       "visible": true
-      }
-     ]
-    },
-    "global": {
-     "hasTrendline": null,
-     "hideLegend": false,
-     "seriesType": null,
-     "theme": null,
-     "threshold": null
-    },
-    "graphChartSettings": {
-     "connectNulls": true
-    },
-    "heatmapSettings": {
-     "showLabels": null,
-     "xAxisBuckets": null,
-     "yAxis": "VALUE",
-     "yAxisBuckets": null
-    },
-    "honeycombSettings": {
-     "showHive": true,
-     "showLabels": false,
-     "showLegend": true
-    },
-    "rules": [
-     {
-      "matcher": "B:",
-      "properties": {
-       "alias": null,
-       "color": "DEFAULT",
-       "seriesType": "STACKED_AREA"
+      "name": "Avg. Failure Rate Node.js",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 912,
+        "width": 228,
+        "height": 190
       },
-      "seriesOverrides": [
-       {
-        "color": "#393db0",
-        "name": "Select series"
-       },
-       {
-        "color": "#009e60",
-        "name": "Select series"
-       }
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.errors.total.rate",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
       ],
-      "unitTransform": "auto",
-      "valueFormat": "auto"
-     }
-    ],
-    "singleValueSettings": null,
-    "tableSettings": {
-     "isThresholdBackgroundAppliedToCell": false
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 1,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+      ]
     },
-    "thresholds": [
-     {
-      "axisTarget": "LEFT",
-      "columnId": null,
-      "queryId": "",
-      "rules": [
-       {
-        "color": "#7dc540",
-        "value": null
-       },
-       {
-        "color": "#f5d30f",
-        "value": null
-       },
-       {
-        "color": "#dc172a",
-        "value": null
-       }
+    {
+      "name": "Avg. Failure Rate Python",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1140,
+        "width": 228,
+        "height": 190
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.errors.total.rate",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
       ],
-      "visible": true
-     }
-    ],
-    "type": "STACKED_AREA"
-   }
-  }
- ]
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#048855"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 1,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+      ]
+    },
+    {
+      "name": "Response Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 152,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Execution Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 608,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Failure Rate",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1064,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Synthetic tests",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1520,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 1482,
+        "width": 266,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": " [🔗 Nodejs Synthetic test On Demand](https://{{ .dt_tenant }}.live.dynatrace.com/ui/http-monitor/{{ .synthetic_nodejs }}/ondemand?gtf=-2h&gf=all;)\n\n"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1482,
+        "width": 266,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "[🔗 Python Synthetic test On Demand](https://{{ .dt_tenant }}.live.dynatrace.com/ui/http-monitor/{{ .synthetic_python }}/ondemand?gtf=-2h&gf=all;)\n"
+    },
+    {
+      "name": "Response Time",
+      "nameSize": "medium",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 0,
+        "width": 456,
+        "height": 228
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.response.time",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "PIE_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "MilliSecond",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "STACKED_AREA"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "columnId": "Response time",
+            "rules": [
+              {
+                "value": 2,
+                "color": "#ab0c17"
+              },
+              {
+                "value": 1,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#048855"
+              }
+            ],
+            "queryId": "B",
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.response.time:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(10)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Response Time",
+      "nameSize": "medium",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 0,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.response.time",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "AREA"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=5m&(builtin:service.response.time:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Execution Time",
+      "nameSize": "",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 456,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:cloud.aws.lambda.duration",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.aws_lambda_function"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "STACKED_AREA",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "STACKED_AREA"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=5m&(builtin:cloud.aws.lambda.duration:splitBy(\"dt.entity.aws_lambda_function\"):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Failure Rate",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 912,
+        "width": 456,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "builtin:service.errors.total.rate",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "STACKED_AREA",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "STACKED_AREA"
+            },
+            "seriesOverrides": [
+              {
+                "name": "Select series",
+                "color": "#393db0"
+              },
+              {
+                "name": "Select series",
+                "color": "#009e60"
+              }
+            ]
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [
+                "B"
+              ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": true
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "5m"
+      },
+      "metricExpressions": [
+        "resolution=5m&(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Problems",
+      "tileType": "OPEN_PROBLEMS",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 1444,
+        "width": 342,
+        "height": 190
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Synthetic Test Execution Count Total",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1444,
+        "width": 342,
+        "height": 190
+      },
+      "tileFilter": {},
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": true,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 50,
+                "color": "#7dc540"
+              },
+              {
+                "value": 30,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.requestCount.total:splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.requestCount.total:splitBy():sort(value(auto,descending)):limit(100))"
+      ]
+    },
+    {
+      "name": "Synthetic Test Execution Count Total",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 1444,
+        "width": 342,
+        "height": 152
+      },
+      "tileFilter": {},
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.service"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(builtin:service.requestCount.total:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    }
+  ]
 }
