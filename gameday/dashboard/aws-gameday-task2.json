@@ -1403,7 +1403,7 @@
     "width": 266
    },
    "configured": true,
-   "markdown": " [❇️ Nodejs Synthetic test On Demand]({{ .synthetic_nodejs }};)\n\n",
+   "markdown": " [❇️ Nodejs Synthetic test On Demand](https://{{ .dt_tenant }}.live.dynatrace.com/ui/http-monitor/{{ .synthetic_nodejs }}/ondemand?gtf=-2h&gf=all;)\n\n",
    "name": "Markdown",
    "nameSize": null,
    "tileFilter": {
@@ -1420,7 +1420,7 @@
     "width": 266
    },
    "configured": true,
-   "markdown": "[❇️ Python Synthetic test On Demand]({{ .synthetic_python }};)\n",
+   "markdown": "[❇️ Python Synthetic test On Demand](https://{{ .dt_tenant }}.live.dynatrace.com/ui/http-monitor/{{ .synthetic_python }}/ondemand?gtf=-2h&gf=all;)\n",
    "name": "Markdown",
    "nameSize": null,
    "tileFilter": {
