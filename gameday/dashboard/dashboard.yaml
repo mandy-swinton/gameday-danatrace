@@ -4,6 +4,6 @@ aws-gameday-task2:
 - name: aws-gameday-task2
 - managementZoneId: "/gameday/management-zone/awsgamedaytask2.id"
 - managementZoneName: "/gameday/management-zone/awsgamedaytask2.name"
-- grouptag: gamedaygroup2
+- grouptag: ${{ env.Tag }}
 - synthetic_nodejs: "/gameday/synthetic-monitor/aws-serverless-task2-http-endpoint-nodejs.id"
 - synthetic_python: "/gameday/synthetic-monitor/aws-serverless-task2-http-endpoint-python.id"
