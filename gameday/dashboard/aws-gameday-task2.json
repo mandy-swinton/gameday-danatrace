@@ -667,7 +667,7 @@
       ]
     },
     {
-      "name": "Avg. Execution Time Nodejs",
+      "name": "Avg. Execution Time Python",
       "nameSize": "small",
       "tileType": "DATA_EXPLORER",
       "configured": true,
