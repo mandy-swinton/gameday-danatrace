@@ -7,4 +7,4 @@ aws-gameday-task2:
 - grouptag: {{ .Env.Tag }}
 - synthetic_nodejs: "/gameday/synthetic-monitor/aws-serverless-task2-http-endpoint-nodejs.id"
 - synthetic_python: "/gameday/synthetic-monitor/aws-serverless-task2-http-endpoint-python.id"
-- dt_tenant: "awsgamedaytask2"
+- dt_tenant: {{ .Env.tenant }}
