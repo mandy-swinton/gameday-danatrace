@@ -1,10 +1,10 @@
 config:
 - aws-gameday-task2: aws-gameday-task2.json
 aws-gameday-task2:
-- name: aws-gameday-task2
+- name: "aws-gameday-task2"
 - managementZoneId: "/gameday/management-zone/awsgamedaytask2.id"
 - managementZoneName: "/gameday/management-zone/awsgamedaytask2.name"
 - grouptag: {{ .Env.Tag }}
 - synthetic_nodejs: "/gameday/synthetic-monitor/aws-serverless-task2-http-endpoint-nodejs.id"
 - synthetic_python: "/gameday/synthetic-monitor/aws-serverless-task2-http-endpoint-python.id"
-- dt_tenant: {{ .Env.tenant }}
+- dt_tenant: "awsgamedaytask2"
