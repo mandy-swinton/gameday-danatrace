@@ -11,6 +11,10 @@
 # ---- Define Dynatrace Environment ----
 # Sample: https://{your-domain}/e/{your-environment-id} for managed or https://{your-environment-id}.live.dynatrace.com for SaaS
 
+DT_TENANT_URL=$1
+DT_PAAS_TOKEN=$2
+DT_API_TOKEN=$3
+
 # For 3rd party server (images, cdn...). by default it takes the public IP
 DOMAIN=
 # ==================================================
