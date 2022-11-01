@@ -1627,7 +1627,12 @@
         "width": 342,
         "height": 190
       },
-      "tileFilter": {}
+      "tileFilter": {
+        "managementZone": {
+          "id": "all",
+          "name": "All"
+        }
+      }
     },
     {
       "name": "Synthetic Test Execution Count Total",
