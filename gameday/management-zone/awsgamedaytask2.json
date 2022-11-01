@@ -19,7 +19,7 @@
       "negate": false,
       "operator": "CONTAINS",
       "type": "STRING",
-      "value": "aws-serverless-task2"
+      "value": "task2-http-endpoint"
      },
      "key": {
       "attribute": "SERVICE_NAME",
