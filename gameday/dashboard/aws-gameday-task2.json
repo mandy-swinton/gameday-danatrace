@@ -1618,7 +1618,7 @@
       ]
     },
     {
-      "name": "Problems",
+      "name": "Problems detected by AI (Davis)",
       "tileType": "OPEN_PROBLEMS",
       "configured": true,
       "bounds": {
