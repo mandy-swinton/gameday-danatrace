@@ -279,7 +279,7 @@
                 "nestedFilters": [],
                 "criteria": [
                   {
-                    "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1",
+                    "value": "task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1",
                     "evaluator": "IN",
                     "matchExactly": true
                   }
@@ -382,8 +382,8 @@
         "resolution": "5m"
       },
       "metricExpressions": [
-        "resolution=Inf&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-        "resolution=null&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+        "resolution=Inf&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
       ]
     },
     {
@@ -419,7 +419,7 @@
                 "nestedFilters": [],
                 "criteria": [
                   {
-                    "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1",
+                    "value": "task2-http-endpoint-python-{{ .grouptag }} in us-east-1",
                     "evaluator": "IN",
                     "matchExactly": true
                   }
@@ -522,8 +522,8 @@
         "resolution": "5m"
       },
       "metricExpressions": [
-        "resolution=Inf&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-        "resolution=null&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+        "resolution=Inf&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.response.time:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
       ]
     },
     {
@@ -559,7 +559,7 @@
                 "nestedFilters": [],
                 "criteria": [
                   {
-                    "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}",
+                    "value": "task2-http-endpoint-nodejs-{{ .grouptag }}",
                     "evaluator": "IN",
                     "matchExactly": true
                   }
@@ -662,8 +662,8 @@
         "resolution": "5m"
       },
       "metricExpressions": [
-        "resolution=Inf&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-        "resolution=null&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+        "resolution=Inf&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"task2-http-endpoint-nodejs-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
       ]
     },
     {
@@ -699,7 +699,7 @@
                 "nestedFilters": [],
                 "criteria": [
                   {
-                    "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }}",
+                    "value": "task2-http-endpoint-python-{{ .grouptag }}",
                     "evaluator": "IN",
                     "matchExactly": true
                   }
@@ -802,8 +802,8 @@
         "resolution": "5m"
       },
       "metricExpressions": [
-        "resolution=Inf&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-        "resolution=null&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+        "resolution=Inf&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:cloud.aws.lambda.duration:filter(and(or(in(\"dt.entity.aws_lambda_function\",entitySelector(\"type(aws_lambda_function),entityName.equals(~\"task2-http-endpoint-python-{{ .grouptag }}~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
       ]
     },
     {
@@ -839,7 +839,7 @@
                 "nestedFilters": [],
                 "criteria": [
                   {
-                    "value": "aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1",
+                    "value": "task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1",
                     "evaluator": "IN",
                     "matchExactly": true
                   }
@@ -941,8 +941,8 @@
         "resolution": "5m"
       },
       "metricExpressions": [
-        "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-        "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+        "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-nodejs-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
       ]
     },
     {
@@ -978,7 +978,7 @@
                 "nestedFilters": [],
                 "criteria": [
                   {
-                    "value": "aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1",
+                    "value": "task2-http-endpoint-python-{{ .grouptag }} in us-east-1",
                     "evaluator": "IN",
                     "matchExactly": true
                   }
@@ -1080,8 +1080,8 @@
         "resolution": "5m"
       },
       "metricExpressions": [
-        "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-        "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"aws-serverless-task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+        "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+        "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.equals(~\"task2-http-endpoint-python-{{ .grouptag }} in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
       ]
     },
     {
