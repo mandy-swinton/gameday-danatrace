@@ -20,10 +20,10 @@
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 228,
-        "left": 456,
-        "width": 456,
-        "height": 228
+        "top": 152,
+        "left": 380,
+        "width": 380,
+        "height": 190
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -137,10 +137,10 @@
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 228,
-        "left": 912,
-        "width": 456,
-        "height": 228
+        "top": 152,
+        "left": 760,
+        "width": 380,
+        "height": 190
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -254,8 +254,8 @@
       "bounds": {
         "top": 38,
         "left": 0,
-        "width": 228,
-        "height": 190
+        "width": 190,
+        "height": 114
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -393,9 +393,9 @@
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 228,
-        "width": 228,
-        "height": 190
+        "left": 190,
+        "width": 190,
+        "height": 114
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -533,9 +533,9 @@
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 456,
-        "width": 228,
-        "height": 190
+        "left": 380,
+        "width": 190,
+        "height": 114
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -673,9 +673,9 @@
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 684,
-        "width": 228,
-        "height": 190
+        "left": 570,
+        "width": 190,
+        "height": 114
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -813,9 +813,9 @@
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 912,
-        "width": 228,
-        "height": 190
+        "left": 760,
+        "width": 190,
+        "height": 114
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -952,9 +952,9 @@
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 1140,
-        "width": 228,
-        "height": 190
+        "left": 950,
+        "width": 190,
+        "height": 114
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -1090,7 +1090,7 @@
       "configured": true,
       "bounds": {
         "top": 0,
-        "left": 152,
+        "left": 114,
         "width": 228,
         "height": 38
       },
@@ -1102,7 +1102,7 @@
       "configured": true,
       "bounds": {
         "top": 0,
-        "left": 608,
+        "left": 494,
         "width": 228,
         "height": 38
       },
@@ -1114,7 +1114,7 @@
       "configured": true,
       "bounds": {
         "top": 0,
-        "left": 1064,
+        "left": 874,
         "width": 228,
         "height": 38
       },
@@ -1126,7 +1126,7 @@
       "configured": true,
       "bounds": {
         "top": 0,
-        "left": 1520,
+        "left": 1216,
         "width": 228,
         "height": 38
       },
@@ -1138,7 +1138,7 @@
       "configured": true,
       "bounds": {
         "top": 76,
-        "left": 1482,
+        "left": 1178,
         "width": 266,
         "height": 38
       },
@@ -1151,7 +1151,7 @@
       "configured": true,
       "bounds": {
         "top": 38,
-        "left": 1482,
+        "left": 1178,
         "width": 266,
         "height": 38
       },
@@ -1164,10 +1164,10 @@
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 228,
+        "top": 152,
         "left": 0,
-        "width": 456,
-        "height": 228
+        "width": 380,
+        "height": 190
       },
       "tileFilter": {},
       "customName": "Top list",
@@ -1279,9 +1279,9 @@
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 456,
+        "top": 342,
         "left": 0,
-        "width": 456,
+        "width": 380,
         "height": 304
       },
       "tileFilter": {},
@@ -1394,9 +1394,9 @@
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 456,
-        "left": 456,
-        "width": 456,
+        "top": 342,
+        "left": 380,
+        "width": 380,
         "height": 304
       },
       "tileFilter": {},
@@ -1508,9 +1508,9 @@
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "bounds": {
-        "top": 456,
-        "left": 912,
-        "width": 456,
+        "top": 342,
+        "left": 760,
+        "width": 380,
         "height": 304
       },
       "tileFilter": {},
@@ -1623,8 +1623,8 @@
       "configured": true,
       "bounds": {
         "top": 456,
-        "left": 1444,
-        "width": 342,
+        "left": 1178,
+        "width": 266,
         "height": 190
       },
       "tileFilter": {
@@ -1640,8 +1640,8 @@
       "configured": true,
       "bounds": {
         "top": 114,
-        "left": 1444,
-        "width": 342,
+        "left": 1178,
+        "width": 266,
         "height": 190
       },
       "tileFilter": {},
@@ -1736,8 +1736,8 @@
       "configured": true,
       "bounds": {
         "top": 304,
-        "left": 1444,
-        "width": 342,
+        "left": 1178,
+        "width": 266,
         "height": 152
       },
       "tileFilter": {},
