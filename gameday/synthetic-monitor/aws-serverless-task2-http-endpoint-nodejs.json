@@ -19,7 +19,7 @@
     "automaticallyAssignedApps": [],
     "createdFrom": "GUI",
     "enabled": true,
-    "frequencyMin": 0,
+    "frequencyMin": 2,
     "locations": [
      "GEOLOCATION-5B3CDE358F4D4B31",
      "GEOLOCATION-146A961B8F1400EE",
