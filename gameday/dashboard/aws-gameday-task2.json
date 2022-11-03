@@ -1652,6 +1652,7 @@
           {
             "id": "A",
             "metric": "builtin:service.requestCount.total",
+            "spaceAggregation": "AVG",
             "timeAggregation": "DEFAULT",
             "splitBy": [],
             "sortBy": "DESC",
@@ -1749,6 +1750,7 @@
           {
             "id": "A",
             "metric": "builtin:service.requestCount.total",
+            "spaceAggregation": "AVG",
             "timeAggregation": "DEFAULT",
             "splitBy": [
               "dt.entity.service"
