@@ -10,6 +10,7 @@
           "name": "{{ .managementZoneName }}"
         }
       },
+      "preset": true,
       "popularity": 10,
       "hasConsistentColors": true
     },
@@ -1143,7 +1144,7 @@
           "height": 38
         },
         "tileFilter": {},
-        "markdown": " [🔗 Nodejs Synthetic test On Demand]({{ .dt_tenant }}/ui/http-monitor/{{ .synthetic_nodejs }}"
+        "markdown": " [🔗 Nodejs Synthetic test On Demand]({{ .dt_tenant }}/ui/http-monitor/{{ .synthetic_nodejs }}]"
       },
       {
         "name": "Markdown",
@@ -1156,7 +1157,7 @@
           "height": 38
         },
         "tileFilter": {},
-        "markdown": "[🔗 Python Synthetic test On Demand]({{ .dt_tenant }}/ui/http-monitor/{{ .synthetic_python }}"
+        "markdown": "[🔗 Python Synthetic test On Demand]({{ .dt_tenant }}/ui/http-monitor/{{ .synthetic_python }}]"
       },
       {
         "name": "Response Time",
