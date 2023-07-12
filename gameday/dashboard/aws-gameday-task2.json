@@ -942,8 +942,8 @@
           "resolution": "5m"
         },
         "metricExpressions": [
-          "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.contains(~\"t2-endpoint-nodejs in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
-          "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.contains(~\"t2-endpoint-nodejs in us-east-1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
+          "resolution=Inf&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.contains(~\"t2-endpoint-nodejs~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names",
+          "resolution=null&(builtin:service.errors.total.rate:filter(and(or(in(\"dt.entity.service\",entitySelector(\"type(service),entityName.contains(~\"t2-endpoint-nodejs~\")\"))))):splitBy():sort(value(auto,descending)):limit(100))"
         ]
       },
       {
