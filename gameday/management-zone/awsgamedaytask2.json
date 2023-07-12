@@ -19,7 +19,7 @@
       "negate": false,
       "operator": "CONTAINS",
       "type": "STRING",
-      "value": "task2-http-endpoint"
+      "value": "t2-endpoint"
      },
      "key": {
       "attribute": "SERVICE_NAME",
