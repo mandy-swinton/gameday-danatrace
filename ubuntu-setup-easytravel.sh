@@ -13,7 +13,7 @@
 
 DT_TENANT_URL=$2
 DT_PAAS_TOKEN=$3
-DT_HOST_NAME=$4
+DT_HOST_GROUP=$4
 
 # For 3rd party server (images, cdn...). by default it takes the public IP
 DOMAIN=
@@ -160,7 +160,7 @@ installDynatrace() {
   if [ -n "${DT_TENANT_URL}" ]; then
     printInfoSection "Installation of OneAgent"
     wget -nv -O oneagent.sh "$DT_TENANT_URL/api/v1/deployment/installer/agent/unix/default/latest?Api-Token=$DT_PAAS_TOKEN&arch=x86&flavor=default"
-    sh oneagent.sh --set-app-log-content-access=true --set-system-logs-access-enabled=true --set-infra-only=false --set-host-name=$DT_HOST_NAME
+    sh oneagent.sh --set-app-log-content-access=true --set-system-logs-access-enabled=true --set-infra-only=false --set-host-name="easytravel" --set-host-group="$DT_HOST_GROUP"
   fi
 }
 
